@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import TodoStore from '../stores/TodoStore'
+import Header from './Header'
+import Content from './Content'
+
 class Wrapper extends Component{
     
     handleChange (event) {
@@ -19,14 +21,15 @@ class Wrapper extends Component{
     render(){
         return(
             <div className='Wrapper'>
-                <h1>I am contents</h1>
+                <Header />
+                <p>What's your moood?</p>
                 <input
-                    class='InputWrapper'
+                    className='InputWrapper'
                     type='text'
                     ref='title'
                     value={this.state.title}
                     onChange={this.handleChange.bind(this)} />
-
+                    <Content />
             </div>
         )
     }
